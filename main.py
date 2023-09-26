@@ -1,12 +1,16 @@
+#имортирую библиотеку для создания оконного приложения
 from tkinter import *
 from tkinter import messagebox
- 
+
+#функция для расчета индекса массы тела
 def calculate_bmi():
    kg = int(weight_tf.get())
    m = int(height_tf.get())/100
    bmi = kg/(m*m)
    bmi = round(bmi, 1)
+
  
+ #проверяю на норму веса
    if bmi < 18.5:
        messagebox.showinfo('bmi-pythonguides', f'ИМТ = {bmi} соответствует недостаточному весу')
    elif (bmi > 18.5) and (bmi < 24.9):
@@ -15,9 +19,12 @@ def calculate_bmi():
        messagebox.showinfo('bmi-pythonguides', f'ИМТ = {bmi} соответствует избыточному весу')
    else:
        messagebox.showinfo('bmi-pythonguides', f'ИМТ = {bmi} соответствует ожирению')  
- 
+
+#инициализация самого приложения
 window = Tk()
+#название приложения
 window.title('Калькулятор индекса массы тела (ИМТ)')
+#размеры приложения
 window.geometry('400x300')
  
  
